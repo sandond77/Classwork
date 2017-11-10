@@ -1,0 +1,19 @@
+h1{
+	font-family: 'Gloria Hallelujah', cursive;
+}
+
+h2{
+	font-family: 'Orbitron', sans-serif;
+}
+
+p{
+	font-family: 'Raleway', sans-serif;
+	font-size:18px;
+	font-weight:normal;
+	line-height: 150%;
+	letter-spacing: 1px;
+}
+
+a:hover { 
+    background-color: yellow;
+}
