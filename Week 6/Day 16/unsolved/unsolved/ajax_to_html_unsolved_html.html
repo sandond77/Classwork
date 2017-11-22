@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Favorite Movies</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Basic Table</h2>
+    <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+    <table class="table table-hover"s> 
+      <thead>
+        <tr>
+          <th>Movie Name</th>
+          <th>Year</th>
+          <th>Actors</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- Example Movie 1 -->
+          <td>BLAH</td>
+          <td>BLAH</td>
+          <td>BLAH</td>
+          <td>Blah</td>
+        </tr>
+        <tr>
+          <td>BLAH</td>
+          <td>BLAH</td>
+          <td>BLAH</td>
+          <td>Blah</td>
+        </tr>
+        <tr>
+          <td>BLAH</td>
+          <td>BLAH</td>
+          <td>BLAH</td>
+          <td>Blah</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<div class="gif">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // The below code fills in the first row of the table
+    $.ajax({
+      url: "https://www.omdbapi.com/?t=your+name&y=&plot=short&apikey=40e9cece",
+      method: "GET"
+    }).done(function(yourName) {
+      console.log(yourName);
+
+
+      // Getting the first row of the table
+      var firstRowTds = $("table")
+        .children()
+        .eq(1)
+        .children("tr")
+        .eq(0)
+        .children("td");
+
+      // Setting the inner text of each td in the first row
+      firstRowTds.eq(0).text(yourName.Title);
+
+      firstRowTds.eq(1).text(yourName.Year);
+
+      firstRowTds.eq(2).text(yourName.Actors);
+
+      firstRowTds.eq(3).html("<img src='"+ yourName.Poster + "' width='150px' height='200px' </img>");
+    });
+
+    // Step 2: copy the above and try and figure out what to change to fill in the
+    // second row.
+    $.ajax({
+      url: "https://www.omdbapi.com/?t=harry+potter&y=2001&plot=short&apikey=40e9cece",
+      method: "GET"
+    }).done(function(harryPotter) {
+      console.log(harryPotter);
+
+
+      // Getting the first row of the table
+      var secondRowTds = $("table")
+        .children()
+        .eq(1) //eq1 of children() will select the table's body; eq0 would get the table headers
+        .children("tr")
+        .eq(1) //eq of children tr is each row
+        .children("td");
+
+      // Setting the inner text of each td in the first row
+      secondRowTds.eq(0).text(harryPotter.Title);
+
+      secondRowTds.eq(1).text(harryPotter.Year);
+
+      secondRowTds.eq(2).text(harryPotter.Actors);
+
+      secondRowTds.eq(3).html("<img src='"+ harryPotter.Poster + "' width='150px' height='200px'</img>");
+    });
+
+
+    // Step 3: using the same logic, fill in the third row
+
+    $.ajax({
+      url: "https://www.omdbapi.com/?t=wedding+crashers&y=&plot=short&apikey=40e9cece",
+      method: "GET"
+    }).done(function(weddingCrashers) {
+      console.log(weddingCrashers);
+
+
+      // Getting the first row of the table
+      var thirdRowTds = $("table")
+        .children()
+        .eq(1) 
+        .children("tr")
+        .eq(2)
+        .children("td");
+
+      // Setting the inner text of each td in the first row
+      thirdRowTds.eq(0).text(weddingCrashers.Title);
+
+      thirdRowTds.eq(1).text(weddingCrashers.Year);
+
+      thirdRowTds.eq(2).text(weddingCrashers.Actors);
+
+      thirdRowTds.eq(3).html("<img src='"+ weddingCrashers.Poster + "' width='150px' height='200px'</img>");
+    });
+
+//javascript, jQuery
+var dogs = $.get("http://api.giphy.com/v1/gifs/search?q=dogs&api_key=dc6zaTOxFJmzC");
+dogs.done(function(dogs) { console.log("success got data", dogs); });
+
+$('.dogs').append("<img src='"+ dogs.data["0"].embed_url+ "' width='150px' height='200px'</img>")
+
+  </script>
+</body>
+
+</html>
