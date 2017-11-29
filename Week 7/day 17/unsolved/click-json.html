@@ -37,9 +37,11 @@
 
       // Function for dumping the JSON content for each button into the div
       function displayMovieInfo() {
-
         // YOUR CODE GOES HERE!!! HINT: You will need to create a new div to hold the JSON.
         $('#buttons-view').prepend("<div id=jsondata" + "</div>")
+        for(var i in response){
+            $('#movie-view').append(response[i]+"<br>");
+        }
       }
 
       // Function for displaying movie data
