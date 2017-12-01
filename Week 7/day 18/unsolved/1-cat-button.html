@@ -15,29 +15,29 @@
     //
     $("#cat-button").on("click", function() {
 
-      //
+      // sets the API as a variable queryURL
       var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
 
-      //
+      //AJAX call to pull the API info
       $.ajax({
         url: queryURL,
         method: "GET"
       })
 
-      //
+      //After the information is pulled from the API, this function will run
       .done(function(response) {
 
-        //
+        //Saves the API's JSON data image output as a variable
         var imageUrl = response.data.image_original_url;
 
-        //
+        //jquery for creating an image tag
         var catImage = $("<img>");
 
-        //
+        //gives the variable catImage the two attributes mentioned to finish the image tag
         catImage.attr("src", imageUrl);
         catImage.attr("alt", "cat image");
 
-        //
+        // adds the image to the images div
         $("#images").prepend(catImage);
       });
     });
