@@ -15,7 +15,7 @@
     //
     $("#cat-button").on("click", function() {
 
-      // sets the API as a variable queryURL
+      // sets the API key and url as a variable queryURL
       var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
 
       //AJAX call to pull the API info
@@ -37,7 +37,7 @@
         catImage.attr("src", imageUrl);
         catImage.attr("alt", "cat image");
 
-        // adds the image to the images div
+        // adds the image to the images div; if there is an existing image, the new image will be placed before the old one 
         $("#images").prepend(catImage);
       });
     });
