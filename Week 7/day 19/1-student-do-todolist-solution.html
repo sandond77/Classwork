@@ -40,12 +40,17 @@
     // Create an initial toDoCount variable
     var toDoCount = 0;
 
+    var toDoArray = [];
+
     //  On Click event associated with the add-to-do function
     $("#add-to-do").on("click", function(event) {
       event.preventDefault();
 
       // Get the to-do "value" from the textbox and store it a variable
       var toDoTask = $("#to-do").val().trim();
+      toDoArray.push(toDoTask);
+      console.log(toDoArray);
+
 
       // Create a new variable that will hold a "<p>" tag.
       // Then give it an ID in the following form:
@@ -71,13 +76,37 @@
 
       // Add the button and to do item to the to-dos div
       $("#to-dos").append(toDoItem);
+      localStorage.setItem("todo",JSON.stringify(toDoArray));
 
       // Clear the textbox when done
       $("#to-do").val("");
 
       // Add to the toDoCount
       toDoCount++;
+
     });
+
+    var local = localStorage.getItem("todo")
+    var split = JSON.parse(local);
+    var toDoTask;
+
+    for (var i = 0; i < split.length; i++) {
+      toDoTask = split[i];
+
+      var toDoItem = $("<p>");
+      toDoItem.attr("id", "item-" + toDoCount);
+      toDoItem.append(" " + toDoTask);
+
+      var toDoClose = $("<button>");
+      toDoClose.attr("data-to-do", toDoCount);
+      toDoClose.attr("data", toDoItem);
+      toDoClose.addClass("checkbox");
+      toDoClose.append("✓");
+
+      toDoItem = toDoItem.prepend(toDoClose);
+      $("#to-dos").append(toDoItem);
+      toDoCount++;
+    }
 
     // When a user clicks a check box then delete the specific content
     // (NOTE: Pay attention to the unusual syntax here for the click event.
@@ -87,9 +116,15 @@
       // Get the number of the button from its data attribute and hold in a variable called  toDoNumber.
       var toDoNumber = $(this).attr("data-to-do");
 
+      // var n =  $(this).attr("data");
+      // console.log(n)
+
       // Select and Remove the specific <p> element that previously held the to do item number.
       $("#item-" + toDoNumber).remove();
+
+
     });
+
 
     </script>
 
