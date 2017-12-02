@@ -93,6 +93,10 @@
       var email = $('#email-input').val();
       var comment = $('#comment-input').val();
 
+      localStorage.setItem("name",name);
+      localStorage.setItem("age",age);
+      localStorage.setItem("email",email);
+      localStorage.setItem("comment",comment);
 
       // Console log each of the user inputs to confirm we are receiving them correctly
       console.log(name);
@@ -102,12 +106,21 @@
 
 
       // Output all of the new information into the relevant HTML sections
-      $('#name-display').text("Name: "+name);
-      $('#age-display').text("Age: "+age);
-      $('#email-display').text("Email: "+email);
-      $('#comment-display').text("Comment: "+comment);
+      // $('#name-display').text("Name: "+name);
+      // $('#age-display').text("Age: "+age);
+      // $('#email-display').text("Email: "+email);
+      // $('#comment-display').text("Comment: "+comment);
 
+      $('#name-display').text("Name: "+ (localStorage.getItem("name")));
+      $('#age-display').text("Age: " + (localStorage.getItem("age")));
+      $('#email-display').text("Email: "+ (localStorage.getItem("email")));
+      $('#comment-display').text("Comment: "+ (localStorage.getItem("comment")));
     });
+
+  $('#name-display').text("Name: "+ (localStorage.getItem("name")));
+  $('#age-display').text("Age: " + (localStorage.getItem("age")));
+  $('#email-display').text("Email: "+ (localStorage.getItem("email")));
+  $('#comment-display').text("Comment: "+ (localStorage.getItem("comment")));
   </script>
 
 </body>
