@@ -33,6 +33,8 @@ database.ref().on("value", function(snapshot) {
   clickCounter = snapshot.val().clickCount;
   console.log("clickCounter: " + clickCounter);
   $("#click-value").text(clickCounter);
+}, function(errorObject){
+  console.log("Error. Read failed. " + errorObject.code);
 });
 
 // We are now inside our .on function...

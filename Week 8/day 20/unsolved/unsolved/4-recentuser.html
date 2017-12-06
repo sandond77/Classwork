@@ -85,7 +85,18 @@
     //  START CODING BELOW!!
 
     // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCHvhrZebCFMm0a2_oArMnPOrmd1YS7T0s",
+    authDomain: "exercise1-4eed4.firebaseapp.com",
+    databaseURL: "https://exercise1-4eed4.firebaseio.com",
+    projectId: "exercise1-4eed4",
+    storageBucket: "exercise1-4eed4.appspot.com",
+    messagingSenderId: "173908912589"
+  };
 
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
 
     // Create a variable to reference the database
 
@@ -98,10 +109,41 @@
       // YOUR TASK!!!
 
       // Code in the logic for storing and retrieving the most recent user.
+      var name = $("#name-input").val().trim();
+      var email = $("#email-input").val().trim();
+      var age = $("#age-input").val().trim();
 
+      database.ref("recentuser").set({
+        name: name,
+        email: email,
+        age: age
+      });
+
+      // database.ref("recentuser").on("value", function (snapshot){
+      //   name = snapshot.val().name;
+      //   email = snapshot.val().email;
+      //   age = snapshot.val().age;
+
+      //   $('#name-display').text(name);
+      //   $('#email-display').text(email);
+      //   $('#age-display').text(age);
+      // });
+    });
       // Don't forget to handle the "initial load"
 
-    });
+    database.ref("recentuser").on("value", function (snapshot){
+        name = snapshot.val().name;
+        email = snapshot.val().email;
+        age = snapshot.val().age;
+
+        $('#name-display').text(name);
+        $('#email-display').text(email);
+        $('#age-display').text(age);
+    }, function(errorObject){
+  console.log("Error. Read failed. " + errorObject.code);
+  });
+ 
+
 
 
     // Create Firebase "watcher" Hint: .on("value")
