@@ -3,13 +3,14 @@
 // Initialize Firebase
 // Make sure to match the configuration to the script version number in the HTML
 // (Ex. 3.0 != 3.7.0)         
-var config = {
-  apiKey: "AIzaSyDxQqkGa3AKrcGmGVFalJe40g4hdzADf6w",
-  authDomain: "coder-bay-views.firebaseapp.com",
-  databaseURL: "https://coder-bay-views.firebaseio.com",
-  storageBucket: "coder-bay-views.appspot.com",
-  messagingSenderId: "17945436261"
-};
+  var config = {
+    apiKey: "AIzaSyCHvhrZebCFMm0a2_oArMnPOrmd1YS7T0s",
+    authDomain: "exercise1-4eed4.firebaseapp.com",
+    databaseURL: "https://exercise1-4eed4.firebaseio.com",
+    projectId: "exercise1-4eed4",
+    storageBucket: "exercise1-4eed4.appspot.com",
+    messagingSenderId: "173908912589"
+  };
 
 firebase.initializeApp(config);
 
@@ -19,6 +20,20 @@ var database = firebase.database();
 
 // --------------------------------------------------------------
 // Link to Firebase Database for viewer tracking
+
+var connectionsRef = database.ref("/connections");
+var connectedRef = database.ref(".info/connected");
+
+connectedRef.on("value". function(snap){
+  if (snap.val()){
+    var con = connectionsRef.push(true);
+    con.onDisconnect().remove();
+  }
+})
+
+connectionsRef.on("value",function(snap){
+  $("#watchers").text(snap.numChildren());
+})
 
 
 // --------------------------------------------------------------

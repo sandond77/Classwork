@@ -4,8 +4,18 @@
 
 
 // Assign the reference to the database to a variable named 'database'
-//var database = ...
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCHvhrZebCFMm0a2_oArMnPOrmd1YS7T0s",
+    authDomain: "exercise1-4eed4.firebaseapp.com",
+    databaseURL: "https://exercise1-4eed4.firebaseio.com",
+    projectId: "exercise1-4eed4",
+    storageBucket: "exercise1-4eed4.appspot.com",
+    messagingSenderId: "173908912589"
+  };
+  firebase.initializeApp(config);
 
+  var database = firebase.database();
 
 // Initial Values
 var initialBid = 0;
@@ -17,32 +27,42 @@ var highBidder = initialBidder;
 
 // At the initial load and subsequent value changes, get a snapshot of the stored data.
 // This function allows you to update your page in real-time when the firebase database changes.
-database.ref().on("value", function(snapshot) {
-
+database.ref("codersbay").on("value", function(snapshot) {
+  console.log(snapshot.child("highBidder"))
   // If Firebase has a highPrice and highBidder stored (first case)
   if (snapshot.child("highBidder").exists() && snapshot.child("highPrice").exists()) {
 
     // Set the variables for highBidder/highPrice equal to the stored values in firebase.
     // highPrice = ...
+       highPrice = snapshot.val().highPrice
+       highBidder = snapshot.val().highBidder
+
     // highBidder = ...
 
 
     // Change the HTML to reflect the stored values
-
+    $('#highest-price').text(highPrice);
+    $('#highest-bidder').text(highBidder);
 
     // Print the data to the console.
+    console.log(highPrice);
+    console.log(highBidder);
 
 
   }
 
   // Else Firebase doesn't have a highPrice/highBidder, so use the initial local values.
   else {
+    highPrice = initialBid;
+    highBidder = initialBidder;
 
     // Change the HTML to reflect the initial values
-
+    $('#highest-price').text(highPrice);
+    $('#highest-bidder').text(highBidder);
 
     // Print the data to the console.
-
+    console.log(highPrice);
+    console.log(highBidder);
 
   }
 
@@ -60,6 +80,9 @@ $("#submit-bid").on("click", function(event) {
   event.preventDefault();
 
   // Get the input values
+  var bidderName = $('#bidder-name').val().trim();
+  var bidderPrice = $('#bidder-price').val().trim();
+
 
 
   // Log the Bidder and Price (Even if not the highest)
@@ -69,16 +92,23 @@ $("#submit-bid").on("click", function(event) {
     alert("You are now the highest bidder.");
 
     // Save the new price in Firebase
-
+    database.ref("codersbay").set({
+       highPrice: bidderPrice ,
+       highBidder: bidderName
+    });
 
     // Log the new High Price
+    console.log(bidderPrice)
 
 
     // Store the new high price and bidder name as a local variable
+      highPrice = bidderPrice;
+      highBidder = bidderName;
 
 
     // Change the HTML to reflect the new high price and bidder
-
+    $('#highest-price').text(highPrice);
+    $('#highest-bidder').text(highBidder);
   }
 
   else {
