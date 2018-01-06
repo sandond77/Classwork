@@ -10,9 +10,9 @@
 // Include the request npm package (Don't forget to run "npm install request" in this folder first!)
 // ...
 
-
+var request = require('request');
 // Grab or assemble the movie name and store it in a variable called "movieName"
-var movieName = "";
+var movieName = process.argv[2];
 // ...
 
 
@@ -26,6 +26,12 @@ console.log(queryUrl);
 
 // Then create a request to the queryUrl
 // ...
+request(queryUrl, function(error,response,body){
+	if (!error && response.statusCode === 200) {
+		body = JSON.parse(body);
+		console.log(movieName + " was released " + body.Released);
+	}
+})
 
   // If the request is successful
   // ...
