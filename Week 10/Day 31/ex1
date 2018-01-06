@@ -1,0 +1,14 @@
+var arg = process.argv[2];
+var arg2 = process.argv[3];
+
+if (arg === arg2){
+	console.log("True, " + arg + " = " + arg2);
+} else {
+	console.log("False, " + arg + " =/= " + arg2)
+}
+
+if (arg % 7 === 0 && arg2  % 7 === 0){
+	console.log("True, " + arg + " and " + arg2 + " are multiples of 7");
+} else {
+	console.log("False, " + arg + " and " + arg2 + " are multiples of 7");
+}
