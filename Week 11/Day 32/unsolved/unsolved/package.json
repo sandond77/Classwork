@@ -1,0 +1,16 @@
+{
+  "name": "userprompt.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "commandSortUnsolved.js",
+  "dependencies": {
+    "geocoder": "^0.2.3",
+    "inquirer": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
