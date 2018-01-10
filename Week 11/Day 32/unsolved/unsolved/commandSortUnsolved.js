@@ -9,17 +9,6 @@ for (var i = 2; i < process.argv.length; i++) {
 	matrix.push(parseFloat(process.argv[i]));
 }
 
-// for (var key in test){
-// 	var parsed = parseInt(test[key]);
-// 	matrix.push(parsed);
-// }
-
-// matrix = matrix.sort();
-
-// console.log(typeof(test));
-// console.log(test);
-
-// console.log(typeof(matrix))
 console.log(matrix);
 
 matrix = matrix.sort(function(a, b){return a-b});

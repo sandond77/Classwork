@@ -2,6 +2,7 @@
 // Build a Node application that takes in a location input via the command line, then geocodes it using the geocoder NPM package.
 // Then console.log the geocoding information for display.
 
+
 // Easier: User will provide the city and state in the following format: "Atlanta, GA", "Houston, TX"
 // Slightly More Challenging: User will provide the address in any format: "151 Sip Ave Jersey City, NJ", "Austin, TX", etc.
 
@@ -12,16 +13,25 @@
 // Include the geocoder NPM package (Remember to run "npm install geocoder"!)
 
 
-
+var geocoder = require('geocoder');
 
 // Take in the command line arguments
 
+var address = "";
+
+for (var i = 2; i < process.argv.length; i++) {
+	address = address + " " + process.argv[i];
+}
+
+console.log(address);
+
+// // Build your address as an array or string
 
 
-
-// Build your address as an array or string
-
-
-
+geocoder.geocode(address, function ( err, data ) {
+  // do something with data 
+  data = JSON.stringify(data,null,2)
+  console.log(data)
+});
 
 // Then use Geocoder NPM to geocode the address
