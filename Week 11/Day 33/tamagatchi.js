@@ -59,7 +59,7 @@ dog.goOutside = function (){
 }
 
 dog.goInside = function (){
-	if (this.inside) {
+	if (this.outside) {
 		console.log("Do we have to? =( Fine...");
 		this.outside = false;
 	} else {
@@ -97,10 +97,12 @@ console.log('\n');
 console.log(cat)
 
 console.log('\n');
+cat.meow();
 cat.sleep();
 cat.destroyFurniture();
 cat.sleep();
 
+dog.barker();
 dog.play();
 dog.goOutside();
 dog.goOutside();
