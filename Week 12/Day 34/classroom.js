@@ -1,20 +1,20 @@
+// requiring our Student module exported from student.js
 var Student = require("./student.js");
-// var inquirer = require("inquirer");
-var classStudents = [];
-
-
-function Classroom(classStudents, size, professor, room){
-	this.students = [];
-	this.professor = professor;
-	this.room = room;
-
-	this.addStudent =  function(name,subject,gpa){
-		this.students.push(new Student(name,subject,gpa));
-	}
-
-	this.studentCount = this.students.length 
-}
-
-// var entire = EntireClass(classStudents, 5, "me", 111)
-
+// constructor function for creating classroom objects
+var Classroom = function(profName, roomNum) {
+  // this.students will hold all of our student objects
+  this.students = [];
+  this.profName = profName;
+  this.roomNum = roomNum;
+  // a method that creates a student using our Student constructor.
+  // It then pushes the new student object to this.students and updates this.numStudents
+  this.addStudent = function(studentName, favoriteSub, gradePointAvg) {
+    this.students.push(new Student(studentName, favoriteSub, gradePointAvg));
+  };
+  // this method will tell you how many students are in the class
+  this.studentCount = function() {
+    return this.students.length;
+  };
+};
+// exporting our Classroom constructor. We will require it in main.js
 module.exports = Classroom;

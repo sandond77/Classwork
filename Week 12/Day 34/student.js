@@ -13,14 +13,11 @@
 // Room number
 // The Student constructor function from above which adds a new student to the class
 // BONUS: Make it so that that your application can take in user input to add new classes and new students to those classes.
-
-function Student(name,subject,gpa){
-	this.name = name;
-	this.subject = subject;
-	this.gpa = gpa;
-
-}
-
-// var guy = new Student("bob","math", 1.23)
-
-module.exports = Student
+// constructor function for creating student objects
+var Student = function(name, favoriteSub, gpa) {
+  this.name = name;
+  this.favoriteSub = favoriteSub;
+  this.gpa = gpa;
+};
+// exporting our Student constructor
+module.exports = Student;
