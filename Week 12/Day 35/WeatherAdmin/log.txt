@@ -1,0 +1,14 @@
+
+Name: bob Location: San Francisco,CA Date: 1516337664539
+Name: bob Location: San Francisco,CA Date: 1516337680992
+Name: bob Location: San Francisco,CA Date: 1516337731744
+Name: bob Location: San Francisco,CA Date: 1516337765912
+Name: bob Location: Oakland Date: 1516337795068
+Name: bob Location: Oakland, California Date: 1516337802639
+Name: bob Location: Oakland, CA Date: 1516337808857
+ Name: bob Location: San Francisco,CA Date: 1516338083763
+ Name: bob Location: San Francisco,CA Date: 1516338087207
+ Name: bob Location: San Francisco,CA Date: 1516338104734
+ Name: bob Location: Los Angelous, CA Date: 1516338141260
+ Name: bob Location: San Francisco,CA Date: 1516338258535
+ Name: bob Location: San Francisco,CA Date: 1516338386182
