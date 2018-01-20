@@ -31,3 +31,12 @@ score INTEGER(10)
   -- Create a boolean column called "five_times" that sets the default value to false if nothing is entered --
   -- Make an integer column called "score" --
 );
+INSERT INTO favorite_foods VALUES("Bob\'s Pizzas", 6);
+
+SELECT * from favorite_foods;
+
+DELETE FROM favorite_foods;
+
+INSERT INTO favorite_movies VALUES("Kimi no na wa", true, 10);
+
+SELECT * from favorite_movies;
