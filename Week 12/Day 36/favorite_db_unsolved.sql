@@ -31,12 +31,47 @@ score INTEGER(10)
   -- Create a boolean column called "five_times" that sets the default value to false if nothing is entered --
   -- Make an integer column called "score" --
 );
-INSERT INTO favorite_foods VALUES("Bob\'s Pizzas", 6);
 
-SELECT * from favorite_foods;
+INSERT INTO favorite_foods (food,score)
+VALUES("Bob\'s Pizzas", 6);
 
-DELETE FROM favorite_foods;
+INSERT INTO favorite_foods (food,score)
+VALUES("Top Dog", 8);
 
-INSERT INTO favorite_movies VALUES("Kimi no na wa", true, 10);
+INSERT INTO favorite_foods (food,score)
+VALUES("Tasty Pot", 10);
 
-SELECT * from favorite_movies;
+
+INSERT INTO favorite_songs (song,artist,score)
+VALUES("Fire Escape", "Andrew McMahon", 10);
+
+INSERT INTO favorite_songs (song,artist,score)
+VALUES("Closer", "Elephante", 7);
+
+INSERT INTO favorite_songs (song,artist,score)
+VALUES("Dead Man\'s Dollar", "Andrew McMahon", 8);
+
+SELECT * FROM favorite_foods;
+SELECT * FROM favorite_songs;
+
+UPDATE favorite_songs SET song = "ABC", artist = "fake", score = "1" WHERE song='Closer';
+
+SELECT * FROM favorite_songs;
+
+DELETE FROM favorite_songs WHERE song='ABC';
+
+SELECT * FROM favorite_songs;
+
+CREATE TABLE pets(
+id integer(10) AUTO_INCREMENT NOT NULL,
+name VARCHAR(30) NOT NULL,
+age INTEGER(10) NOT NULL,
+PRIMARY KEY (id)
+);
+
+INSERT INTO pets (name,age)
+VALUES('SID',10);
+
+SELECT * FROM pets;
+
+
