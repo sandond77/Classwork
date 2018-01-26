@@ -42,30 +42,24 @@ function range(arg1,arg2){
 	})
 }
 
-// function song(arg){
-// 	connection.query(
-// 		"SELECT * FROM top5000 WHERE Artist='"+arg+"'", function(error,response){
-// 			console.log("Song Search");
-// 			console.log(response);
-// 	})
-// }
+function song(arg){
+	connection.query(
+		"SELECT * FROM top5000 WHERE Songs='"+arg+"'", function(error,response){
+			console.log("Song Search");
+			console.log(response);
+	})
+}
 
-connection.query(
-	"SELECT * FROM top5000 WHERE Song=Crazy", function(error,response){
-		console.log("Song Search");
-		console.log(response);
-})
 
-// if (action === "artist"){
-// 	artist(input1)
-// } else if (action === "multiple"){
-// 	multiple()
-// } else if (action === "range"){
-// 	range(input1,input2)
-// } else if (action === "song"){
-// 	song(input1)
-// } else {
-// 	console.log("Please an action(artist,multiple,range,song) and required inputs for it.")
-// }
+if (action === "artist"){
+	artist(input1)
+} else if (action === "multiple"){
+	multiple()
+} else if (action === "range"){
+	range(input1,input2)
+} else if (action === "song"){
+	song(input1)
+} else {
+	console.log("Please an action(artist,multiple,range,song) and required inputs for it.")
+}
 
-// song("Barbie Girl")
