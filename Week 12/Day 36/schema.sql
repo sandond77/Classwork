@@ -18,4 +18,4 @@ PRIMARY KEY (id)
 );
 
 
-SELECT * FROM top5000;
+SELECT Artist FROM top5000 WHERE Songs='Crazy';
