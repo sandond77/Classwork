@@ -17,9 +17,15 @@ var PORT = 8080;
 var server = http.createServer(handleRequest);
 
 function handleRequest(req,res){
+
+	// fs.readFile(__dirname + "/home.html", function(err,data){
+	// 	if (err) throw err;
+	// 	res.writeHead(200, {"Content-Type": "text/html"});
+	// 	res.end(data)
+	// })
 	var address = req.url;
 	switch(address){
-		default
+		case "/home.html":
 			fs.readFile(__dirname + address, function(err,data){
 				if (err) throw err;
 				res.writeHead(200, {"Content-Type": "text/html"});
