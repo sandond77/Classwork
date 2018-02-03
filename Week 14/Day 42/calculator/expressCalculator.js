@@ -37,7 +37,7 @@ app.get("/:operation/:int1/:int2", function(req, res) {
 
       result = int1 * int2;
       break;
-      
+
     case "divide":
     case "/":
       result = int1 / int2;
@@ -49,7 +49,7 @@ app.get("/:operation/:int1/:int2", function(req, res) {
   }
 
   // We return the result back to the user in the form of a string
-  res.send(int1 + " " + operation + " " + int2 + " = " + result);
+  res.send("<h1>" + int1 + " " + operation + " " + int2 + " = " + result + "</h1>");
 
 });
 
