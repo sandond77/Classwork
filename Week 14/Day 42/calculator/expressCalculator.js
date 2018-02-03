@@ -39,7 +39,6 @@ app.get("/:operation/:int1/:int2", function(req, res) {
       break;
 
     case "divide":
-    case "/":
       result = int1 / int2;
       break;
     default:
