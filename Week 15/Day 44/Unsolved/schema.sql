@@ -32,3 +32,5 @@ INSERT INTO parties (party_name, party_type, party_cost, client_id) VALUES ('Top
 INSERT INTO parties (party_name, party_type, party_cost, client_id) VALUES ('Whiskey', 'grown-up', 300, 2);
 INSERT INTO parties (party_name, party_type, party_cost, client_id) VALUES ('Cigar', 'grown-up', 250, 3);
 
+SELECT * FROM parties;
+SELECT * FROM clients;
