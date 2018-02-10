@@ -1,10 +1,4 @@
-//Using the app skeleton provided to you:
-// Create a MySQL database named ‘chirpy’ with a ‘chirps’ table to hold your data.x
-// Your ‘chirp’ table should include a field for id, author, chirp, and time created.x
-// Modify the connection.js file to create a connection to your database.x
-// Modify the api-routes.js file so that there is a route for adding a new chirp, as well as retrieving all chirps.
-// Modify the chirps.js file so that the page interacts with the database.
-// BONUS:  If you finish early, have them work on routes for editing and deleting chirps. *********************************************************************************
+// *********************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
 // *********************************************************************************
 
@@ -25,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-// Static directory to be served
+// Static directory
 app.use(express.static("app/public"));
 
 // Routes
