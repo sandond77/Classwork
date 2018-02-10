@@ -1,7 +1,4 @@
-DROP DATABASE IF EXISTS chirpy;
-
 CREATE DATABASE chirpy;
-
 USE chirpy;
 
 CREATE TABLE `chirps` (
@@ -9,7 +6,5 @@ CREATE TABLE `chirps` (
   `author` VARCHAR( 255) NOT NULL,
   `body` VARCHAR( 255 ) NOT NULL,
   `created_at` DATETIME NOT NULL,
-PRIMARY KEY (`id`) 
-  );
-  
-  SELECT * FROM chirps;
+
+  PRIMARY KEY ( `id` ) );

@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
@@ -31,20 +31,11 @@
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <p class="cool-font">Name</p>
-
-          <!-- Hint: add something to the input tag to be able to get its data -->
-
-          <input class="form-control" type="text" placeholder="Enter Your Name" id="name">
+          <input class="form-control" type="text" id="author" placeholder="Enter Your Name">
           <br>
           <p class="cool-font">Chirp</p>
-
-          <!-- Hint: add something to the textarea tag to be able to get its data -->
-
-          <textarea class="form-control" rows="3" placeholder="Enter Chirp Here!" id="chirp"></textarea>
-
-          <!-- Hint: add something to the button tag to be able to listen to its click -->
-
-          <button class="btn btn-lg pull-right" id="submit">Submit!</button>
+          <textarea class="form-control" rows="3" id="chirp-box" placeholder="Enter Chirp Here!"></textarea>
+          <button id="chirp-submit" class="btn btn-lg pull-right">Submit!</button>
         </div>
       </div>
 
@@ -52,9 +43,7 @@
         <div class="col-sm-8 col-sm-offset-2">
           <h2>Chirps</h2>
           <hr>
-
-          <!-- Display all chirps here -->
-
+          <div id="chirp-area"></div>
         </div>
       </div>
 
