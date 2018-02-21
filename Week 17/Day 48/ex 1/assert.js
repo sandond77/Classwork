@@ -42,6 +42,6 @@ var multiply = function(x, y) {
   else 
     console.log(x * y);
 };
-// 
-// console.log("should have no error", assertThrows(multiply, 2, 2));
-// console.log("error", assertThrows(multiply, "2", 2));
+
+console.log("should have no error", assertThrows(multiply, 2, 2));
+console.log("error", assertThrows(multiply, "2", 2));
