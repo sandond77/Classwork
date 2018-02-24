@@ -19,7 +19,7 @@ PageUtilities.prototype.init = function init() {
 };
 
 PageUtilities.prototype.totalPages = function totalPages() {
-  return this.totalpages = Math.ceil(this.posts / this.pagination);
+  return this.totalpages = Math.ceil(this.posts / this.pagination)
 };
 
 module.exports = PageUtilities;
