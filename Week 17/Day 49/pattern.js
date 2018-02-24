@@ -73,3 +73,11 @@ pattern("bob rob gob dog dog dog cog", "abcdded")
 console.log('\n"bob rob gob dog dog dog dog", "abcddd" (mismatched string lengths, this should be false)')
 pattern("bob rob gob dog dog dog dog", "abcddd")
 
+console.log('\njkfdjslj fjdskljf fjdskljf", "ac" (this should be false)')
+pattern("jkfdjslj fjdskljf fjdskljf", "ac");
+
+console.log('\n"jkfdjslj fjdskljf fjdskljf", "abc" (this should be false)')
+pattern("jkfdjslj fjdskljf fjdskljf", "abc");
+
+console.log('\n"jkfdjslj fjdskljf fjdskljf", "abb" (this should be trues)')
+pattern("jkfdjslj fjdskljf fjdskljf", "abb");
