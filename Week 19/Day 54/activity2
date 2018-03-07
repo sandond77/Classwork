@@ -18,3 +18,12 @@ B. Use find commands to get:
 ### BONUS
 
 If you finish early, check out the MongoDB documentation and figure out how to find users by an entry in an array.
+
+```
+> db.places.insert({"name":"Sandon", "row":"3", "os":"win","hobbies":"sleeping"}
+)
+WriteResult({ "nInserted" : 1 })
+> db.places.insert({"name":"Gerardo", "row":"3", "os":"mac","hobbies":"piano"})
+WriteResult({ "nInserted" : 1 })
+> db.places.insert({"name":"Thomas", "row":"3", "os":"mac","hobbies":"walking do
+g"})
