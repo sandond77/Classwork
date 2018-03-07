@@ -1,8 +1,7 @@
--- Drops the todolist if it exists currently --
-DROP DATABASE IF EXISTS todolist;
--- Creates the "todolist" database --
-CREATE DATABASE todolist;
+DROP DATABASE IF EXISTS olympics_test;
 
+CREATE DATABASE olympics_test;
 
-USE todolist;
-SELECT * FROM todos;
+USE olympics_test; 
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
