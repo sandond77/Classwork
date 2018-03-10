@@ -1,5 +1,3 @@
-// Add code to userModel.js to complete the model
-
 var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
@@ -25,7 +23,7 @@ app.use(express.static("public"));
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/userdb", {
+mongoose.connect("mongodb://localhost/custommethods", {
   useMongoClient: true
 });
 
@@ -34,7 +32,12 @@ mongoose.connect("mongodb://localhost/userdb", {
 // Route to post our form submission to mongoDB via mongoose
 app.post("/submit", function(req, res) {
   // Create a new user using req.body
-  User.create(req.body)
+
+  var user = new User(req.body);
+  user.coolifier();
+  user.makeCool();
+
+  User.create(user)
     .then(function(dbUser) {
       // If saved successfully, send the the new User document to the client
       res.json(dbUser);
