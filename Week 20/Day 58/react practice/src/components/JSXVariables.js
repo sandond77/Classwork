@@ -11,7 +11,7 @@ const JSXVariables = () => (
         <h2>My name has {length} letters</h2>
         <h2>I think React is very convenient</h2>
         <h2>My name without vowels is:
-    	</h2>
+    	</h2> 
  
       </div>
     </div>
