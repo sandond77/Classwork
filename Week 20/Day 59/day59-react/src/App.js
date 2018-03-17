@@ -1,15 +1,39 @@
 import React from "react";
-import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
-import friends from "./friends.json";
+import List from "./components/List";
 
-const App = () => (
-  <Wrapper>
-    <Title>Friends List</Title>
-    <SpongeBobCard />
-    <MrKrabsCard />
-    <SquidwardCard />
-  </Wrapper>
-);
+const groceries = [
+  {
+    id: 1,
+    name: "Milk",
+    purchased: true
+  },
+  {
+    id: 2,
+    name: "Eggs",
+    purchased: true
+  },
+  {
+    id: 3,
+    name: "Cheese",
+    purchased: false
+  },
+  {
+    id: 4,
+    name: "Cake Mix",
+    purchased: false
+  },
+  {
+    id: 5,
+    name: "Carrots",
+    purchased: false
+  },
+  {
+    id: 6,
+    name: "Juice",
+    purchased: true
+  }
+];
+
+const App = () => <List groceries={groceries} />;
 
 export default App;
