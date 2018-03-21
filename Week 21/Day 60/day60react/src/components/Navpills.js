@@ -2,16 +2,16 @@ import React from "react";
 
 const Navpills = props => (
   <ul className="nav nav-tabs">
-    <li onClick={() => props.handlePageChange("Home")}>
+    <li className={props.currentPage === "Home" ? 'active' : ''} onClick={() => props.handlePageChange("Home")}>
       <a>Home</a>
     </li>
-    <li onClick={() => props.handlePageChange("About")}>
+    <li className={props.currentPage === "About" ? 'active' : ''} onClick={() => props.handlePageChange("About")}>
       <a>About</a>
     </li>
-    <li onClick={() => props.handlePageChange("Blog")}>
+    <li className={props.currentPage === "Blog" ? 'active' : ''} onClick={() => props.handlePageChange("Blog")}>
       <a>Blog</a>
     </li>
-    <li onClick={() => props.handlePageChange("Contact")}>
+    <li className={props.currentPage === "Contact" ? 'active' : ''} onClick={() => props.handlePageChange("Contact")}>
       <a>Contact</a>
     </li>
   </ul>

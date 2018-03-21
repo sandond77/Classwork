@@ -14,6 +14,19 @@ class PortfolioContainer extends Component {
     this.setState({ currentPage: page });
   };
 
+  selectPage = () => {
+    if (this.state.currentPage === "Home"){
+      return <Home />
+    } else if (this.state.currentPage === "About"){
+      return <About />
+    } else if (this.state.currentPage === "Blog"){
+      return <Blog />
+    } else if (this.state.currentPage === "Contact"){
+      return <Contact />  
+    }
+  }
+
+
   render() {
     return (
       <div>
@@ -23,8 +36,10 @@ class PortfolioContainer extends Component {
         />
         Based on `this.state.currentPage`, render the appropriate component
         here.
+        {this.selectPage()}
       </div>
     );
+    // {this.selectPage()}
   }
 }
 
