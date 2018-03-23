@@ -26,10 +26,7 @@ class App extends Component {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
     API.getRecipes(this.state.recipeSearch)
-      .then(res => {
-        console.log(res.data);
-        this.setState({ recipes: res.data });
-      })
+      .then(res => this.setState({ recipes: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -68,24 +65,23 @@ class App extends Component {
           </Row>
           <Row>
             <Col size="xs-12">
-              <h1>Render Recipes Here</h1>
               {!this.state.recipes.length ? (
-                <h1 className="text-center"> No Recipes to Display </h1>
-                ) : ( 
+                <h1 className="text-center">No Recipes to Display</h1>
+              ) : (
                 <RecipeList>
                   {this.state.recipes.map(recipe => {
                     return (
                       <RecipeListItem
-                        key = {recipe.title}
-                        title = {recipe.title}
-                        href = {recipe.href}
-                        ingredients = {recipe.ingredients}
+                        key={recipe.title}
+                        title={recipe.title}
+                        href={recipe.href}
+                        ingredients={recipe.ingredients}
                         thumbnail={recipe.thumbnail}
-                        />
-                      );
+                      />
+                    );
                   })}
-                  </RecipeList>
-                )}
+                </RecipeList>
+              )}
             </Col>
           </Row>
         </Container>
