@@ -45,33 +45,53 @@
 # 
 ###############################################################################
 
-# Prompt user for student's identification information...
-first_name = input('Please enter the student\'s first name. ')
-last_name = input('Please enter the student\'s last name. ')
-middle_initial = input('Please enter the student\'s middle initial. ')
+student_list = [];
 
-# Prompt user for student's contact information...
-address = input('Please enter the student\'s address. ')
-email = input('Please enter the student\'s email. ')
-phone_number = input('Please enter the student\'s phone_number. ')
+while True:
+	info = dict.fromkeys(['first_name','last_name','middle_initial','address','email','phone_number'])
 
-# Print a separator...
-print('-' * 18)
+	# Prompt user for student's identification information...
+	info['first_name'] = input('Please enter the student\'s first name. ')
+	info['last_name'] = input('Please enter the student\'s last name. ')
+	info['middle_initial'] = input('Please enter the student\'s middle initial. ')
 
-# Print all to the console...
-print('The student\'s first name is {0}'.format(first_name))
-print('The student\'s last name is {0}'.format(last_name))
-print('The student\'s middle initial is {0}'.format(middle_initial))
+	# Prompt user for student's contact information...
+	info['address'] = input('Please enter the student\'s address. ')
+	info['email'] = input('Please enter the student\'s email. ')
+	info['phone_number'] = input('Please enter the student\'s phone_number. ')
 
-print('The student\'s address is {0}'.format(address))
-print('The student\'s email is {0}'.format(email))
-print('The student\'s phone number is {0}'.format(phone_number))
+	# Print a separator...
+	print('-' * 18)
 
-# Print a separator...
-print('-' * 18)
+	# Print all to the console...
+	# print('The student\'s first name is {0}'.format(first_name))
+	# print('The student\'s last name is {0}'.format(last_name))
+	# print('The student\'s middle initial is {0}'.format(middle_initial))
+
+	# print('The student\'s address is {0}'.format(address))
+	# print('The student\'s email is {0}'.format(email))
+	# print('The student\'s phone number is {0}'.format(phone_number))
+	for key, value in info:
+		print('The student\'s {0} is {1}'.format(key,value))
+
+	# Print a separator...
+	print('-' * 18)
 
 # Use a conditional statement here. If they say "No", simply continue the loop, 
 # so they can enter the information again.
+
+prompt = input("Is the information above correct? (Y/N)");
+
+if prompt == 'Y':
+	student_list.append(info)
+	print(student_list)
+	again = input("Do you want to add another student's information? (Y/N)")
+	if again == "Y":
+		continue 
+	else:
+		print(student_list)
+
+
 #
 # If they say "Yes", add the student to a list, and prompt them again, asking
 # if they want to add another student.
@@ -84,4 +104,4 @@ print('-' * 18)
 #
 ###############################################################################
 
-confirmation = input('Is this information correct? (Y/n) ')
+co
