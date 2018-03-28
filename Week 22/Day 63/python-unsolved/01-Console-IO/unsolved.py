@@ -20,6 +20,14 @@
 #   don't worry about handling it. We'll get to that shortly.
 #
 ###############################################################################
+first = input("What is your first name? ")
+last = input("what is your last name? ")
+middle = input("What is your middle initial (if you have one)? ")
+address = input("What is your address? ")
+email = input("What is your email? ")
+phone = input("What is your phone number? ")
+
+print("\n",first + " " + middle + " " + last + "\n",address + "\n",email+ "\n",phone,"\n")
 
 # What function prints a message to the screen and waits for user input?
 # Use it here to collect a student's information--first name, last name, etc.
@@ -34,4 +42,5 @@
 # them to confirm whether or not the information is correct. Save their 
 # response, but don't worry about doing anything with it yet!
 ###############################################################################
-# ...Your Code Here...
+confirmation = input("Is the information above correct?")
+print(confirmation)
