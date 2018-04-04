@@ -9,6 +9,7 @@ var random_value = stuff[ Math.floor( Math.random() * 14 ) ];
 
 for (var i = 0; i < stuff.length; i++) {
 	if (stuff[i] === random_value) {
-		console.log("Random value and stuff matched. Index value is "+[i] + " and array value is "+ stuff[i])
-	}
+		console.log("--------------------------------------------------")
+		console.log(" Match Found! \n Index value is "+ [i] +". \n Random value is "+ random_value +" and array value is "+ stuff[i])
+	} 
 }
