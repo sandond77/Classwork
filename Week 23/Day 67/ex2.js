@@ -51,7 +51,7 @@ for (var i = 0; i < array.length - 1; i++) {
 			swap(array, [i], [j])
 			console.log(array)
 		}
-	}
+	}z
 }
 
 console.log(array)

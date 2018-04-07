@@ -1,0 +1,12 @@
+Choose a random index in the array
+
+- look left of the index
+	if the values are > than the value @ index, move values ot the right of the index
+
+- look right of the index
+	if the value are < than the value @ index, move to the left of the index
+
+Choose a random index in the left array and repeat
+
+choose a ranxom index in the right array and repeat
+
